@@ -48,7 +48,7 @@ setup(
         'plone.app.referenceablebehavior',
         'plone.app.relationfield',
         'plone.app.lockingbehavior',
-        'plone.schema',
+        # 'plone.schema',
     ],
     extras_require={
         'test': [
