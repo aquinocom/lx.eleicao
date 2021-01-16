@@ -1,0 +1,6 @@
+[report]
+include =
+    src/lx/*
+omit =
+    */test*
+    */upgrades/*
