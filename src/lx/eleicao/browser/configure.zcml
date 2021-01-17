@@ -12,10 +12,18 @@
       />
 
   <!-- Publish static files -->
-  <plone:static
-      name="lx.eleicao"
-      type="plone"
-      directory="static"
-      />
+    <plone:static
+        name="lx.eleicao"
+        type="plone"
+        directory="static"
+        />
+
+    <browser:page
+        name="iniciar-votacao"
+        for="*"
+        class=".views.VotacaoView"
+        permission="zope2.View"
+        template="templates/iniciar-votacao.pt"
+        />
 
 </configure>
