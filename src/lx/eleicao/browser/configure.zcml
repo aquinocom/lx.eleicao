@@ -26,7 +26,7 @@
         template="templates/iniciar-votacao.pt"
         />
     <browser:page
-        name="tela-votacao-conselho-deliberativo"
+        name="votacao-conselho-deliberativo"
         for="*"
         class=".views.VotacaoView"
         permission="zope2.View"

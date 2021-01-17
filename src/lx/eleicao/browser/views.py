@@ -16,7 +16,7 @@ class VotacaoView(BrowserView):
         self.errors = {}
         self.url_sucess = self.context.absolute_url()
         self.utils = getToolByName(self.context, 'plone_utils')
-        self.tela_votacao = self.context.absolute_url()+"/urna/++add++voto"
+        self.tela_votacao = self.context.absolute_url()+"/votacao-conselho-deliberativo"
 
         if 'codigo_socio' in request.form:
             codigo_socio_ = request.form['codigo_socio']
