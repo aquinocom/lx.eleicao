@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" metal:use-macro="context/main_template/macros/master">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+</head>
+<body metal:fill-slot="main">
+<div>
+   <font size="4" ><b> Eleição Conselho Fiscal </b> </font>
+</div>
+<form>
+<INPUT TYPE="radio" NAME="Chapacf" VALUE="op1"> Chapa 1 <br /> Presidente:Oldemar Atunes<br />
+Vice Presidente: Joaquim Carlos <br /> Membro: Jose Pacifico <br />  1ºSuplente: Walter Rios <br />
+2ºSuplente: Alessandro Silva <br />
+<INPUT TYPE="radio" NAME="Chapacf" VALUE="op3"> Nulo <br />
+
+<input type="submit" value="Votar">
+</form>
+</body>
+</html>

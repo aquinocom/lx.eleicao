@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" metal:use-macro="context/main_template/macros/master">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+</head>
+<body metal:fill-slot="main">
+<div>
+   <font size="4" ><b> Eleição Conselho Deliberativo </b> </font>
+</div>
+    <form>
+<INPUT TYPE="radio" NAME="Chapacd" VALUE="op1"> Chapa 1 <br /> Presidente:Miguel Perez <br />
+Vice Presidente: Joanildes Barbosa <br />
+<INPUT TYPE="radio" NAME="Chapacd" VALUE="op2"> Chapa 2 <br /> Presidente: Antonio Moura <br />
+Vice Presidente: Danilo Rinaldi Jr. <br />
+<INPUT TYPE="radio" NAME="Chapacd" VALUE="op3"> Nulo <br />
+<br />
+<input type="submit" value="Votar">
+</form>
+</body>
+</html>
