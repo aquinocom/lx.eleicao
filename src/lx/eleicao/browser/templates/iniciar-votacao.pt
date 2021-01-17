@@ -6,9 +6,13 @@
     <title>Document</title>
 </head>
 <body metal:fill-slot="main">
-    <form action="" method="post">
-        <input type="text"/>
-        <input type="button" value="INICIAR"/>
+    <form action="" method="get"
+          tal:attributes="action string:${context/absolute_url}/@@iniciar-votacao"
+          tal:define="codigo_socio_request python: context.REQUEST.get('codigo_socio', None);">
+        <input type="text" name="codigo_socio"
+               tal:attributes="value codigo_socio_request|nothing"/>
+        <input type="submit" value="INICIAR"/>
     </form>
+
 </body>
 </html>
