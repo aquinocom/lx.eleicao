@@ -25,5 +25,19 @@
         permission="zope2.View"
         template="templates/iniciar-votacao.pt"
         />
+    <browser:page
+        name="tela-votacao-conselho-deliberativo"
+        for="*"
+        class=".views.VotacaoView"
+        permission="zope2.View"
+        template="templates/tela-votacao-conselho-deliberativo.pt"
+        />
+    <browser:page
+        name="tela-votacao-conselho-fiscal"
+        for="*"
+        class=".views.VotacaoView"
+        permission="zope2.View"
+        template="templates/tela-votacao-conselho-fiscal.pt"
+        />
 
 </configure>
