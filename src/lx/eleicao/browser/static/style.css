@@ -1,5 +1,5 @@
 
-section {
+.template-votacao-conselho-deliberativo section {
   display: flex;
   flex-flow: row wrap;
   margin-bottom: 100px;
@@ -8,7 +8,7 @@ section > div {
   flex: 1;
   padding: 0.5rem;
 }
-input[type="radio"] {
+.template-votacao-conselho-deliberativo input[type="radio"] {
   display: none;
   &:not(:disabled) ~ label {
     cursor: pointer;
@@ -20,7 +20,7 @@ input[type="radio"] {
     cursor: not-allowed;
   }
 }
-label {
+.template-votacao-conselho-deliberativo label {
   height: 100%;
   display: block;
   background: white;
@@ -33,7 +33,7 @@ label {
   box-shadow: 0px 3px 10px -2px hsla(150, 5%, 65%, 0.5);
   position: relative;
 }
-input[type="radio"]:checked + label {
+.template-votacao-conselho-deliberativo  input[type="radio"]:checked + label {
   background: hsla(150, 75%, 50%, 1);
   color: hsla(215, 0%, 100%, 1);
   box-shadow: 0px 0px 20px hsla(150, 100%, 50%, 0.75);
@@ -56,7 +56,7 @@ input[type="radio"]:checked + label {
     box-shadow: 0px 2px 5px -2px hsla(0, 0%, 0%, 0.25);
   }
 }
-input[type="radio"]#control_05:checked + label {
+.template-votacao-conselho-deliberativo  input[type="radio"]#control_05:checked + label {
   background: red;
   border-color: red;
 }
@@ -98,5 +98,10 @@ p {
     color: #226a4b;
     font-weight: bold;
     font-size: 210%;
+}
 
+#ajuste_tela{
+    width: 900px;
+    margin: 0 auto;
+    text-align: center;
 }

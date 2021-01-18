@@ -7,13 +7,14 @@
     
 </head>
 <body metal:fill-slot="main">
+<div id="ajuste_tela">
     <form action="" method="get"
           tal:attributes="action string:${context/absolute_url}/@@iniciar-votacao"
           tal:define="codigo_socio_request python: context.REQUEST.get('codigo_socio', None);">
-        <input type="text" name="codigo_socio"
+        <input type="text" name="codigo_socio" onkeypress="return event.charCode >= 48 && event.charCode <= 57"
                tal:attributes="value codigo_socio_request|nothing"/>
-        <input type="submit" value="INICIAR"/>
+        <input type="submit" value="INICIAR" name="form.iniciar"/>
     </form>
-
+</div>
 </body>
 </html>

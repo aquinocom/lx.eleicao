@@ -1,0 +1,17 @@
+<!DOCtype html>
+<html lang="en" metal:use-macro="context/main_template/macros/master">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+</head>
+<body metal:fill-slot="main">
+<script>
+    setTimeout(function() {
+        window.location.href = "./iniciar-votacao";
+    }, 3000);
+</script>
+    <h1>VOTO REALIZADO</h1>
+
+</body>
+</html>

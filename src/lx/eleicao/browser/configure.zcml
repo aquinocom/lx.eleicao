@@ -38,5 +38,13 @@
         permission="zope2.View"
         template="templates/tela-votacao-conselho-fiscal.pt"
         />
+        
+    <browser:page
+        name="pos-votacao"
+        for="*"
+        class=".views.VotacaoView"
+        permission="zope2.View"
+        template="templates/pos-votacao.pt"
+        />
 
 </configure>

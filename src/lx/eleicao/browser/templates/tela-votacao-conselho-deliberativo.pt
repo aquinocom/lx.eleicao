@@ -6,8 +6,20 @@
     <title>Document</title>
 </head>
 <body metal:fill-slot="main">
+<script type="text/javascript">
 
-<form action="">
+  function checkForm(form)
+  {
+    //
+    // validate form fields
+    //
+
+    form.votar.disabled = true;
+    return true;
+  }
+
+</script>
+<form action="" onsubmit="return checkForm(this);">
 
     <section tal:define="chapas view/getCandidatos">
 
@@ -35,7 +47,7 @@
     </section>
     <div style="clear:both"> </div>
     <div>
-        <input type="submit" value="VOTAR" class="botao_votar" name="form.votar"/>
+        <input type="submit" value="VOTAR" class="botao_votar" name="form_votar"/>
     </div>
 
 
