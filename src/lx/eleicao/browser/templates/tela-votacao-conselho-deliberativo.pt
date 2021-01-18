@@ -9,16 +9,7 @@
 <div>
    <font size="4" ><b> Eleição Conselho Deliberativo </b> </font>
 </div>
-    <form>
-<INPUT type="radio" name="Chapacd" value="op1"> Chapa 1 <br /> Presidente:Miguel Perez <br />
-Vice Presidente: Joanildes Barbosa <br />
-<INPUT type="radio" name="Chapacd" value="op2"> Chapa 2 <br /> Presidente: Antonio Moura <br />
-Vice Presidente: Danilo Rinaldi Jr. <br />
-<INPUT type="radio" name="Chapacd" value="op3"> Nulo <br />
-<br />
-<input type="submit" value="Votar">
-</form>
-<form action="">
+ <form action="">
 <ul tal:define="chapas view/getCandidatos">
     <li tal:repeat="item chapas">
         <input type="radio" name="voto" value="op1" tal:attributes="value item/id">
