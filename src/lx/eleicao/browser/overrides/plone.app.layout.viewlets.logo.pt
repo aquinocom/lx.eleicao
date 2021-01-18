@@ -1,3 +1,11 @@
+<link rel="stylesheet" href="++resource++lx.eleicao/style.css"/>
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> -->
+
+<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:400,700'>
+<link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css'>
+<div class="header_eleicao">
+
+
 <a id="portal-logo"
    title="Home"
    accesskey="1"
@@ -6,13 +14,15 @@
    i18n:domain="plone"
    i18n:attributes="title">
     <div style="float: left">
-        <img src="++resource++lx.eleicao/logo-gama.png" alt="" />
+        <img src="++resource++lx.eleicao/logo-gama.png" alt="" class="img_logo"/>
     </div>
     
-    <div style="float: left">
+    <div style="float: left" class="titulo_site">
         <h1>SOCIEDADE ESPORTIVA DO GAMA </h1>
         <h2>Eleição Conselho Deliberativo  e Conselho Fiscal</h2>
     </div>
     <div style="clear: both;"></div>
-    </a>
-         
+</a>
+       <!-- <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>     -->
+
+</div>

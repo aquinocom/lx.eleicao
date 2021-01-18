@@ -6,34 +6,41 @@
     <title>Document</title>
 </head>
 <body metal:fill-slot="main">
-<div>
-   <font size="4" ><b> Eleição Conselho Deliberativo </b> </font>
-</div>
-    <form>
-<INPUT type="radio" name="Chapacd" value="op1"> Chapa 1 <br /> Presidente:Miguel Perez <br />
-Vice Presidente: Joanildes Barbosa <br />
-<INPUT type="radio" name="Chapacd" value="op2"> Chapa 2 <br /> Presidente: Antonio Moura <br />
-Vice Presidente: Danilo Rinaldi Jr. <br />
-<INPUT type="radio" name="Chapacd" value="op3"> Nulo <br />
-<br />
-<input type="submit" value="Votar">
-</form>
+
 <form action="">
-<ul tal:define="chapas view/getCandidatos">
-    <li tal:repeat="item chapas">
-        <input type="radio" name="voto" value="op1" tal:attributes="value item/id">
-        <h1 tal:content="item/nome_chapa">Chapa</h1>
-        <img src="" alt="" tal:attributes="src string: ${item/url}/@@images/foto_presidente/mini"/><br/>
-        <h2 tal:content="item/presidente">Presidende</h2>
-        <img src="" alt="" tal:attributes="src string: ${item/url}/@@images/foto_vice_presidente/mini"/><br/>
-        <h3 tal:content="item/vice_presidente">Vice-presidente</h3>
-    </li>
-    <li>
-        <input type="radio" NAME="voto" value="nulo">
-        Nulo
-    </li>
-</ul>
-<input type="submit" value="VOTAR"/>
+
+    <section tal:define="chapas view/getCandidatos">
+
+        <div tal:repeat="item chapas">
+            <input type="radio" id="control_01" name="voto" value="1" 
+                   tal:attributes="value item/id;
+                                   id string: control_${repeat/item/number}" />
+            <label for="control_01" tal:attributes="for string: control_${repeat/item/number}">
+                <h2 tal:content="item/nome_chapa" class="nome_chapa">Pfft</h2>
+                
+                <img src="" alt="" tal:attributes="src string: ${item/url}/@@images/foto_presidente/mini"/><br/>
+                <h2 tal:content="item/presidente">Presidende</h2>
+                <img src="" alt="" tal:attributes="src string: ${item/url}/@@images/foto_vice_presidente/mini"/><br/>
+                <h3 tal:content="item/vice_presidente">Vice-presidente</h3>
+            </label>
+        </div>
+
+        <div>
+            <input type="radio" id="control_nulo" name="voto" value="nulo">
+            <label for="control_nulo">
+                <h2 class="nome_chapa">NULO</h2>
+            </label>
+        </div>
+
+    </section>
+    <div style="clear:both"> </div>
+    <div>
+        <input type="submit" value="VOTAR" class="botao_votar" name="form.votar"/>
+    </div>
+
+
 </form>
+
+
 </body>
 </html>
