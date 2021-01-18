@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCtype html>
 <html lang="en" metal:use-macro="context/main_template/macros/master">
 <head>
     <meta charset="UTF-8"/>
@@ -10,23 +10,30 @@
    <font size="4" ><b> Eleição Conselho Deliberativo </b> </font>
 </div>
     <form>
-<INPUT TYPE="radio" NAME="Chapacd" VALUE="op1"> Chapa 1 <br />
-<img src ="Plone/zinstance/src/lx/eleicao/browser/templates/imagens/miguelperez.jpeg">
-<p>Presidente:Miguel Perez</p>
-<img src ="Plone/zinstance/src/lx/eleicao/browser/templates/imagens/joanildesbarbosa.jpeg">
-<p>Vice Presidente: Joanildes Barbosa</p>
-<br />
-<br />
-<INPUT TYPE="radio" NAME="Chapacd" VALUE="op2"> Chapa 2 <br />
-<img src ="Plone/zinstance/src/lx/eleicao/browser/templates/imagens/antoniomoura.jpeg">
-<p>Presidente: Antonio Moura</p>
-<img src ="Plone/zinstance/src/lx/eleicao/browser/templates/imagens/danilorinaldi.jpeg">
-<p>Vice Presidente: Danilo Rinaldi Jr.</p>
-<br />
-<br />
-<INPUT TYPE="radio" NAME="Chapacd" VALUE="op3"> Nulo <br />
+<INPUT type="radio" name="Chapacd" value="op1"> Chapa 1 <br /> Presidente:Miguel Perez <br />
+Vice Presidente: Joanildes Barbosa <br />
+<INPUT type="radio" name="Chapacd" value="op2"> Chapa 2 <br /> Presidente: Antonio Moura <br />
+Vice Presidente: Danilo Rinaldi Jr. <br />
+<INPUT type="radio" name="Chapacd" value="op3"> Nulo <br />
 <br />
 <input type="submit" value="Votar">
+</form>
+<form action="">
+<ul tal:define="chapas view/getCandidatos">
+    <li tal:repeat="item chapas">
+        <input type="radio" name="voto" value="op1" tal:attributes="value item/id">
+        <h1 tal:content="item/nome_chapa">Chapa</h1>
+        <img src="" alt="" tal:attributes="src string: ${item/url}/@@images/foto_presidente/mini"/><br/>
+        <h2 tal:content="item/presidente">Presidende</h2>
+        <img src="" alt="" tal:attributes="src string: ${item/url}/@@images/foto_vice_presidente/mini"/><br/>
+        <h3 tal:content="item/vice_presidente">Vice-presidente</h3>
+    </li>
+    <li>
+        <input type="radio" NAME="voto" value="nulo">
+        Nulo
+    </li>
+</ul>
+<input type="submit" value="VOTAR"/>
 </form>
 </body>
 </html>
