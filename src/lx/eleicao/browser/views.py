@@ -37,4 +37,18 @@ class VotacaoView(BrowserView):
             self.request.response.redirect(self.tela_votacao)
 
 
-        
+    def getCandidatos(self):
+        lista_candidatos = []
+        candidatos = api.content.find(portal_type='chapa')
+        for item in candidatos:
+            item = item.getObject()
+            dado = {'id': item.id,
+                    'nome_chapa': item.Title,
+                    'presidente': item.presidente,
+                    'vice_presidente': item.vice_presidente,
+                    'foto_presidente': item.foto_presidente,
+                    'foto_vice_presidente': item.foto_vice_presidente,
+                    'url': item.absolute_url()
+                    }
+            lista_candidatos.append(dado)
+        return lista_candidatos

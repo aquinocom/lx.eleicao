@@ -18,5 +18,15 @@ Vice Presidente: Danilo Rinaldi Jr. <br />
 <br />
 <input type="submit" value="Votar">
 </form>
+
+<ul tal:define="chapas view/getCandidatos">
+    <li tal:repeat="item chapas">
+        <h1 tal:content="item/nome_chapa">Chapa</h1>
+        <img src="" alt="" tal:attributes="src string: ${item/url}/@@images/foto_presidente/mini"/><br/>
+        <h2 tal:content="item/presidente">Presidende</h2>
+        <img src="" alt="" tal:attributes="src string: ${item/url}/@@images/foto_vice_presidente/mini"/><br/>
+        <h3 tal:content="item/vice_presidente">Vice-presidente</h3>
+    </li>
+</ul>
 </body>
 </html>
