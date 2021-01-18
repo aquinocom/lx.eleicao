@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="imagensVotacao.css">
     <title>Document</title>
 </head>
 <body metal:fill-slot="main">
@@ -10,9 +11,19 @@
    <font size="4" ><b> Eleição Conselho Fiscal </b> </font>
 </div>
 <form>
-<INPUT TYPE="radio" NAME="Chapacf" VALUE="op1"> Chapa 1 <br /> Presidente:Oldemar Atunes<br />
-Vice Presidente: Joaquim Carlos <br /> Membro: Jose Pacifico <br />  1ºSuplente: Walter Rios <br />
-2ºSuplente: Alessandro Silva <br />
+<INPUT TYPE="radio" NAME="Chapacf" VALUE="op1"> Chapa 1 <br />
+<img src ="Plone/zinstance/src/lx/eleicao/browser/templates/imagens/oldemaratunes.jpeg">
+<p>Presidente:Oldemar Atunes</p>
+<img src ="Plone/zinstance/src/lx/eleicao/browser/templates/imagens/joaquimcarlos.jpeg">
+<p>Vice Presidente: Joaquim Carlos</p>
+<img src ="Plone/zinstance/src/lx/eleicao/browser/templates/imagens/josepacifico.jpeg">
+<p>Membro: Jose Pacifico</p>
+<img src ="Plone/zinstance/src/lx/eleicao/browser/templates/imagens/walterrios.jpeg">
+<p>1ºSuplente: Walter Rios</p>
+<img src ="Plone/zinstance/src/lx/eleicao/browser/templates/imagens/alessandrosilva.jpeg">
+<p>2ºSuplente: Alessandro Silva</p>
+<br />
+<br />
 <INPUT TYPE="radio" NAME="Chapacf" VALUE="op3"> Nulo <br />
 
 <input type="submit" value="Votar">

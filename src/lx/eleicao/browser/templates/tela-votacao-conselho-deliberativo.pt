@@ -10,10 +10,20 @@
    <font size="4" ><b> Eleição Conselho Deliberativo </b> </font>
 </div>
     <form>
-<INPUT TYPE="radio" NAME="Chapacd" VALUE="op1"> Chapa 1 <br /> Presidente:Miguel Perez <br />
-Vice Presidente: Joanildes Barbosa <br />
-<INPUT TYPE="radio" NAME="Chapacd" VALUE="op2"> Chapa 2 <br /> Presidente: Antonio Moura <br />
-Vice Presidente: Danilo Rinaldi Jr. <br />
+<INPUT TYPE="radio" NAME="Chapacd" VALUE="op1"> Chapa 1 <br />
+<img src ="Plone/zinstance/src/lx/eleicao/browser/templates/imagens/miguelperez.jpeg">
+<p>Presidente:Miguel Perez</p>
+<img src ="Plone/zinstance/src/lx/eleicao/browser/templates/imagens/joanildesbarbosa.jpeg">
+<p>Vice Presidente: Joanildes Barbosa</p>
+<br />
+<br />
+<INPUT TYPE="radio" NAME="Chapacd" VALUE="op2"> Chapa 2 <br />
+<img src ="Plone/zinstance/src/lx/eleicao/browser/templates/imagens/antoniomoura.jpeg">
+<p>Presidente: Antonio Moura</p>
+<img src ="Plone/zinstance/src/lx/eleicao/browser/templates/imagens/danilorinaldi.jpeg">
+<p>Vice Presidente: Danilo Rinaldi Jr.</p>
+<br />
+<br />
 <INPUT TYPE="radio" NAME="Chapacd" VALUE="op3"> Nulo <br />
 <br />
 <input type="submit" value="Votar">

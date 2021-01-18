@@ -33,7 +33,7 @@
         template="templates/tela-votacao-conselho-deliberativo.pt"
         />
     <browser:page
-        name="tela-votacao-conselho-fiscal"
+        name="votacao-conselho-fiscal"
         for="*"
         class=".views.VotacaoView"
         permission="zope2.View"
