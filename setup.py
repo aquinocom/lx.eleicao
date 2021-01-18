@@ -40,6 +40,8 @@ setup(
     zip_safe=False,
     install_requires=[
         # -*- Extra requirements: -*-
+        'collective.themefragments',
+        'collective.themesitesetup',
         'plone.api',
         'Products.GenericSetup>=1.8.2',
         'setuptools',
