@@ -105,3 +105,18 @@ p {
     margin: 0 auto;
     text-align: center;
 }
+
+.tela_iniciar_btn{
+    font-size: 24pt;
+    width: 30%;
+    padding: 14px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.tela_iniciar_input{
+    font-size: 24pt;
+    width: 30%;
+    padding: 14px;
+    text-align: center;
+}

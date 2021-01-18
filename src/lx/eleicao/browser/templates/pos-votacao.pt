@@ -11,7 +11,8 @@
         window.location.href = "./iniciar-votacao";
     }, 3000);
 </script>
+<div id="ajuste_tela">
     <h1>VOTO REALIZADO</h1>
-
+</div>
 </body>
 </html>

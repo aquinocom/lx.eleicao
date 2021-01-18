@@ -7,19 +7,7 @@
 </head>
 <body metal:fill-slot="main">
 
-<script type="text/javascript">
 
-  function checkForm(form)
-  {
-    //
-    // validate form fields
-    //
-
-    form.votar.disabled = true;
-    return true;
-  }
-
-</script>
 <form action="" onsubmit="return checkForm(this);">
 
     <section tal:define="chapas view/getCandidatos">
