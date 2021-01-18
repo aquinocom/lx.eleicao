@@ -1,0 +1,18 @@
+<a id="portal-logo"
+   title="Home"
+   accesskey="1"
+   tal:attributes="href view/navigation_root_url;
+                   title view/navigation_root_title"
+   i18n:domain="plone"
+   i18n:attributes="title">
+    <div style="float: left">
+        <img src="++resource++lx.eleicao/logo-gama.png" alt="" />
+    </div>
+    
+    <div style="float: left">
+        <h1>SOCIEDADE ESPORTIVA DO GAMA </h1>
+        <h2>Eleição Conselho Deliberativo  e Conselho Fiscal</h2>
+    </div>
+    <div style="clear: both;"></div>
+    </a>
+         
