@@ -88,8 +88,8 @@ listaRepetido = []
 for item in listaEleitor:
     cod = random.randint(1000,9999)
     dicioVotos = {
-        'Nome' : item,
-        'Código do Eleitor': cod
+        'nome' : item,
+        'codigo': str(cod)
     }
     relacaoVoto.append(dicioVotos)
 
