@@ -1,3 +1,4 @@
+# encoding: utf-8
 import random
 listaEleitor=[
     'Abdoral De Souza Filho',
