@@ -121,3 +121,27 @@ p {
 }
 
 .resultados_votacao{text-align: initial;}
+
+.centered-and-cropped {
+    object-fit: cover;
+    width: 134px;
+    height: 134px;
+    float: left;
+    border-radius: 50%;
+}
+
+.candidatos_chapa{
+   height: 155px;
+}
+.img_cand{
+width: 135px;
+height: 135px;
+float: left;
+}
+.nome_cand{
+float: left;
+margin: 40px 0 0 10px;
+}
+.chapa_nulo{
+margin-top: 170px;
+}
