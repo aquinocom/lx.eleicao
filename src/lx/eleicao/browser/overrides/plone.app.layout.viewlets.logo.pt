@@ -19,7 +19,7 @@
     
     <div style="float: left" class="titulo_site">
         <h1>SOCIEDADE ESPORTIVA DO GAMA </h1>
-        <h2>Eleição Conselho Deliberativo  e Conselho Fiscal</h2>
+        <h2 tal:content="context/Title">Eleição Conselho Deliberativo  e Conselho Fiscal</h2>
     </div>
     <div style="clear: both;"></div>
 </a>

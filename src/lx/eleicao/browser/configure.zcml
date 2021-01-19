@@ -46,5 +46,11 @@
         permission="zope2.View"
         template="templates/pos-votacao.pt"
         />
-
+    <browser:page
+        name="resultados-votacao"
+        for="*"
+        class=".views.VotacaoView"
+        permission="zope2.View"
+        template="templates/resultados-votacao.pt"
+        />
 </configure>

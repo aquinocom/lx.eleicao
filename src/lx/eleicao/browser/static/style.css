@@ -1,4 +1,3 @@
-
 .template-votacao-conselho-deliberativo section {
   display: flex;
   flex-flow: row wrap;
@@ -120,3 +119,5 @@ p {
     padding: 14px;
     text-align: center;
 }
+
+.resultados_votacao{text-align: initial;}
