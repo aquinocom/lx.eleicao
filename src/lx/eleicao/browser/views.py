@@ -231,6 +231,7 @@ class SocioCreate(BrowserView):
                                     type='socio',
                                     title=socio,
                                     codigo_do_socio=str(cod),
+                                    id = str(cod),
                                     container=portal)
 
 
