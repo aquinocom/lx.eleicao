@@ -1,17 +1,18 @@
 <!DOCTYPE html>
+
 <html lang="en" metal:use-macro="context/main_template/macros/master">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Document</title>
-    
+
 </head>
 <body metal:fill-slot="main">
 <div id="ajuste_tela">
     <form action="" method="get"
           tal:attributes="action string:${context/absolute_url}/@@iniciar-votacao"
           tal:define="codigo_socio_request python: context.REQUEST.get('codigo_socio', None);">
-        <input type="text" name="codigo_socio" onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+        <input inputmode="tel" type="text" name="codigo_socio" onkeypress="return event.charCode >= 48 && event.charCode <= 57"
                tal:attributes="value codigo_socio_request|nothing"
                class="tela_iniciar_input"/>
                <br/>
