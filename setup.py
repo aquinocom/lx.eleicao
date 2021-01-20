@@ -40,8 +40,8 @@ setup(
     zip_safe=False,
     install_requires=[
         # -*- Extra requirements: -*-
-        'collective.themefragments',
-        'collective.themesitesetup',
+        # 'collective.themefragments',
+        # 'collective.themesitesetup',
         'plone.api',
         'Products.GenericSetup>=1.8.2',
         'setuptools',
@@ -51,6 +51,7 @@ setup(
         'plone.app.relationfield',
         'plone.app.lockingbehavior',
         # 'plone.schema',
+        'requests',
     ],
     extras_require={
         'test': [
