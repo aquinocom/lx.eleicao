@@ -6,4 +6,7 @@
  <object name="chapa" meta_type="Dexterity FTI"/>
  <object name="voto" meta_type="Dexterity FTI"/>
  <object name="urna" meta_type="Dexterity FTI"/>
+ <object name="eleicao_conselho_fiscal" meta_type="Dexterity FTI"/>
+ <object name="socio" meta_type="Dexterity FTI"/>
+ 
 </object>
