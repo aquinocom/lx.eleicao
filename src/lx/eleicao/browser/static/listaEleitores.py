@@ -93,4 +93,7 @@ for item in listaEleitor:
     }
     relacaoVoto.append(dicioVotos)
 
+
+
+
 print(relacaoVoto)

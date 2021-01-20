@@ -38,7 +38,7 @@
         permission="zope2.View"
         template="templates/tela-votacao-conselho-fiscal.pt"
         />
-        
+
     <browser:page
         name="pos-votacao"
         for="*"
@@ -52,5 +52,11 @@
         class=".views.VotacaoView"
         permission="zope2.View"
         template="templates/resultados-votacao.pt"
+        />
+    <browser:page
+        name="socio-create"
+        for="*"
+        class=".views.SocioCreate"
+        permission="zope2.View"
         />
 </configure>
