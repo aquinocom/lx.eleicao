@@ -227,12 +227,21 @@ class SocioCreate(BrowserView):
         portal = api.content.get(path='/sistema-votacao/socios/')
         for socio in listaEleitor:
             cod = random.randint(1000, 9999)
-            obj = api.content.create(
+            try:
+                obj = api.content.create(
                                     type='socio',
                                     title=socio,
                                     codigo_do_socio=str(cod),
                                     id = str(cod),
                                     container=portal)
+            except:
+                obj = api.content.create(
+                                    type='socio',
+                                    title=socio,
+                                    codigo_do_socio=str(cod-1),
+                                    id = str(cod-1),
+                                    container=portal)
+            
 
 
 
