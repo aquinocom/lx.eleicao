@@ -9,16 +9,21 @@
 <script src="++resource++lx.eleicao/Chart.min.js"></script>
 <div id="ajuste_tela">
     <h1>Resultados da Eleição</h1>
-    <div class="resultados_votacao">
-        <ul>
-            <li>Votos chapa única: <b tal:content="python: view.votosChapas('chapa-unica')"></b></li>
-            <li>Votos nulos: <b tal:content="view/votosNulos"></b></li>
-            <li>Total de votos: <b tal:content="view/votosTotal"></b></li>
-        </ul>
+    <h2>Conselho Fiscal</h2>
+    <hr/>
+    <br/><br/>
+    <div class="resultado_content">
+        <div class="resultados_votacao">
+            <ul>
+                <li>Votos chapa única: <b tal:content="python: view.votosChapas('chapa-unica')"></b></li>
+                <li>Votos nulos: <b tal:content="view/votosNulos"></b></li>
+                <li>Total de votos: <b tal:content="view/votosTotal"></b></li>
+            </ul>
+        </div>
+        <div class="grafico">
+            <canvas id="myChart" width="200" height="200"></canvas>
+        </div>
     </div>
-<div style="width: 400px">
-    <canvas id="myChart" width="200" height="200"></canvas>
-</div>
 
 <tal:lt replace="structure string:&lt;" />script>
 
@@ -26,12 +31,11 @@ var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'pie',
     data: {
-        labels: ['NULO', 'CHAPA 01', 'CHAPA 02'],
+        labels: ['NULO', 'CHAPA ÚNICA'],
         datasets: [{
             label: '# of Votes',
             data: [<tal:script replace="structure view/votosNulos" />,
-                   <tal:script replace="structure python: view.votosChapas('chapa-01')" />, 
-                   <tal:script replace="structure python: view.votosChapas('chapa-02')" />],
+                   <tal:script replace="structure python: view.votosChapas('chapa-unica')" />],
             backgroundColor: [
                 'rgba(255, 99, 132, 1)',
                 'rgba(54, 162, 235, 1)',

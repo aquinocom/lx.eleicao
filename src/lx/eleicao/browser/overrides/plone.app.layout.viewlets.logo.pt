@@ -6,7 +6,7 @@
 <div class="header_eleicao">
 
 
-<a id="portal-logo"
+<a
    title="Home"
    accesskey="1"
    tal:attributes="href view/navigation_root_url;

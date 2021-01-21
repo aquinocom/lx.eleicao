@@ -9,17 +9,22 @@
 <script src="++resource++lx.eleicao/Chart.min.js"></script>
 <div id="ajuste_tela">
     <h1>Resultados da Eleição</h1>
-    <div class="resultados_votacao">
-        <ul>
-            <li>Votos chapa 01: <b tal:content="python: view.votosChapas('chapa-01')"></b></li>
-            <li>Votos chapa 02: <b tal:content="python: view.votosChapas('chapa-02')"></b></li>
-            <li>Votos nulos: <b tal:content="view/votosNulos"></b></li>
-            <li>Total de votos: <b tal:content="view/votosTotal"></b></li>
-        </ul>
+    <h2>Conselho Deliberativo</h2>
+    <hr/>
+    <br/><br/>
+    <div class="resultado_content">
+        <div class="resultados_votacao">
+            <ul>
+                <li>Votos chapa 01: <b tal:content="python: view.votosChapas('chapa-01')"></b></li>
+                <li>Votos chapa 02: <b tal:content="python: view.votosChapas('chapa-02')"></b></li>
+                <li>Votos nulos: <b tal:content="view/votosNulos"></b></li>
+                <li>Total de votos: <b tal:content="view/votosTotal"></b></li>
+            </ul>
+        </div>
+        <div class="grafico">
+            <canvas id="myChart" width="200" height="200"></canvas>
+        </div>
     </div>
-<div style="width: 400px">
-    <canvas id="myChart" width="200" height="200"></canvas>
-</div>
 
 <tal:lt replace="structure string:&lt;" />script>
 

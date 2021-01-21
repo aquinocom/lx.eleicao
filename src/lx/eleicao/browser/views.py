@@ -40,16 +40,23 @@ class VotacaoView(BrowserView):
     def validarCodigo(self, codigo):
         """Validação do codigo socio.
         """
+        
+        # lista_codigos_socio = api.content.find(portal_type='socio')
+        # lista_codigos_socio_ = [x.getObject().codigo_do_socio for x in lista_codigos_socio]
+        # socio_existe = False
+        try:
+            obj_socio = api.content.get(path='/sistema-votacao/socios/'+codigo)
+            confirma_voto = obj_socio.votou
+        except:
+            codigo = ""
+        
 
-        lista_codigos_socio = api.content.find(portal_type='socio')
-        lista_codigos_socio_ = [x.getObject().codigo_do_socio for x in lista_codigos_socio]
-        socio_existe = False
-        if codigo in lista_codigos_socio_:
-            socio_existe = True
-        if codigo != '' and socio_existe == True:
-            self.request.response.redirect(self.tela_votacao)
+        if codigo != '' and confirma_voto==False:
+                obj_socio.votou = True
+                self.request.response.redirect(self.tela_votacao)   
         else:
-            getToolByName(self.context, 'plone_utils').addPortalMessage("Informar o código correto.", type='error')
+            getToolByName(self.context, 'plone_utils').addPortalMessage("Informar o código correto. ", type='error')
+            getToolByName(self.context, 'plone_utils').addPortalMessage("Ou o sócio já votou.", type='error')
         
 
     def validarVoto(self, voto, codigo):

@@ -68,8 +68,21 @@ p {
   section {
     flex-direction: column;
   }
+  .titulo_site h1,
+  .titulo_site h2{
+    font-size: 8pt;
+  }
+}
+.template-votacao-conselho-deliberativo #visual-portal-wrapper, 
+.template-votacao-conselho-fiscal #visual-portal-wrapper{
+  width: 100% !important;
+  margin: 0 auto;
 }
 
+#visual-portal-wrapper{
+  /* width: 900px;
+  margin: 0 auto; */
+}
 
 .botao_votar{
     width: 100%;
@@ -78,18 +91,17 @@ p {
     font-weight: bold;
 }
 
-.header_eleicao{
-    margin: 0 auto;
-    width: 700px;
-}
-
 .titulo_site {
-    padding: 25px 0 0 10px;
+    padding: 15px 0 0 10px;
 }
 .titulo_site h1{
     color: #226a4b !important;
+    font-size: 16pt;
 }
-.img_logo{height: 125px;}
+.titulo_site h2{
+  font-size: 16pt;
+}
+.img_logo{height: 75px;}
 .nome_chapa{
     text-transform: uppercase;
     color: #226a4b;
@@ -98,9 +110,7 @@ p {
 }
 
 #ajuste_tela{
-    width: 900px;
-    margin: 0 auto;
-    text-align: center;
+    text-align: center; 
 }
 
 .tela_iniciar_btn{
@@ -118,7 +128,7 @@ p {
     text-align: center;
 }
 
-.resultados_votacao{text-align: initial;}
+
 
 .centered-and-cropped {
     object-fit: cover;
@@ -142,4 +152,18 @@ margin: 40px 0 0 10px;
 }
 .chapa_nulo{
 margin-top: 170px;
+}
+.resultado_content{
+  margin: 0 auto;
+  width: 680px;
+}
+
+.resultados_votacao{
+  text-align: initial; 
+  width: 240px;
+  float: left}
+
+.grafico{
+  width: 400px;
+  float: left
 }
