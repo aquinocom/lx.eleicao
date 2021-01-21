@@ -1,0 +1,34 @@
+<!DOCtype html>
+<html lang="en" metal:use-macro="context/main_template/macros/master">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+</head>
+<body metal:fill-slot="main">
+<h1>Apuracao de votos</h1>
+<table class="listing">
+    <tr>
+        <th></th>
+        <th>Quantidade</th>
+    </tr>
+    <tr>
+        <td>Votos Conselho deliberativo</td>
+        <td><b tal:content="python: view.getApuracaoVotos('eleicao-conselho-deliberativo/urna')" /></td>
+    </tr>
+    <tr>
+        <td>Votos Conselho Fiscal</td>
+        <td><b tal:content="python: view.getApuracaoVotos('eleicao-conselho-fiscal/urna')" /></td>
+    </tr>
+    <tr>
+        <td>Sócios que votaram</td>
+        <td><b tal:content="view/getApuracaoSociosVotaram" /></td>
+    </tr>
+</table>
+<div metal:use-macro="context/resultados-votacao/macros/resultado_deliberativo"></div>
+<div style="clear:both"></div>
+<div metal:use-macro="context/resultados-votacao-fiscal/macros/resultado_fiscal"></div>
+    
+
+</body>
+</html>
