@@ -6,25 +6,26 @@
     <title>Document</title>
 </head>
 <body metal:fill-slot="main">
+
+<div id="ajuste_tela" metal:define-macro="resultado_deliberativo">
 <script src="++resource++lx.eleicao/Chart.min.js"></script>
-<div id="ajuste_tela">
     <h1>Resultados da Eleição</h1>
     <h2>Conselho Deliberativo</h2>
     <hr/>
     <br/><br/>
-    <div class="resultado_content">
-        <div class="resultados_votacao">
+    <div class="resultado_content" tal:define="caminho string:/sistema-votacao/eleicao-conselho-deliberativo/urna">
+        <div class="resultados_votacao" >
             <ul>
-                <li>Votos chapa 01: <b tal:content="python: view.votosChapas('chapa-01')"></b></li>
-                <li>Votos chapa 02: <b tal:content="python: view.votosChapas('chapa-02')"></b></li>
-                <li>Votos nulos: <b tal:content="view/votosNulos"></b></li>
-                <li>Total de votos: <b tal:content="view/votosTotal"></b></li>
+                <li>Votos chapa 01: <b tal:content="python: view.votosChapas('chapa-01', caminho)"></b></li>
+                <li>Votos chapa 02: <b tal:content="python: view.votosChapas('chapa-02', caminho)"></b></li>
+                <li>Votos nulos: <b tal:content="python: view.votosNulos(caminho)"></b></li>
+                <li>Total de votos: <b tal:content="python: view.votosTotal(caminho)"></b></li>
             </ul>
         </div>
         <div class="grafico">
             <canvas id="myChart" width="200" height="200"></canvas>
         </div>
-    </div>
+    
 
 <tal:lt replace="structure string:&lt;" />script>
 
@@ -35,9 +36,9 @@ var myChart = new Chart(ctx, {
         labels: ['NULO', 'CHAPA 01', 'CHAPA 02'],
         datasets: [{
             label: '# of Votes',
-            data: [<tal:script replace="structure view/votosNulos" />,
-                   <tal:script replace="structure python: view.votosChapas('chapa-01')" />, 
-                   <tal:script replace="structure python: view.votosChapas('chapa-02')" />],
+            data: [<tal:script replace="structure python: view.votosNulos(caminho)" />,
+                   <tal:script replace="structure python: view.votosChapas('chapa-01', caminho)" />, 
+                   <tal:script replace="structure python: view.votosChapas('chapa-02', caminho)" />],
             backgroundColor: [
                 'rgba(255, 99, 132, 1)',
                 'rgba(54, 162, 235, 1)',
@@ -55,7 +56,7 @@ var myChart = new Chart(ctx, {
 
 <tal:lt replace="structure string:&lt;" />/script>
 
-
+</div>
 
 
 

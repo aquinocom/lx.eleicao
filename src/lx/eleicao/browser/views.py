@@ -140,10 +140,10 @@ class VotacaoView(BrowserView):
 
         self.request.response.redirect(self.tela_posvotacao)
 
-    def getVotos(self):
+    def getVotos(self, path):
         lista_votos = []
         votos = api.content.find(portal_type='voto',
-                                      path={'query': '/'.join(self.context.getPhysicalPath()), 'depth': 1})
+                                      path={'query': str(path), 'depth': 1})
         for item in votos:
             item = item.getObject()
             dado = {'id': item.id,
@@ -157,30 +157,59 @@ class VotacaoView(BrowserView):
             lista_votos.append(dado)
         return lista_votos
 
-    def votosTotal(self):
-        return len(self.getVotos())
+    def votosTotal(self, path):
+        return len(self.getVotos(path))
 
-    def votosNulos(self):
+    def votosNulos(self, path):
         """
         quantidade votos nulos
         """
         lista_nulos = []
-        lista_nulo = [x['voto_nulo'] for x in self.getVotos() ]
+        lista_nulo = [x['voto_nulo'] for x in self.getVotos(path) ]
         for v in lista_nulo:
             if v == True:
                 lista_nulos.append(v)
         return len(lista_nulos)
 
-    def votosChapas(self, chapa):
+    def votosChapas(self, chapa, path):
         """
         quantidade votos chapa
         """
         lista_chapas = []
-        lista_chapa = [x['id_chapa'] for x in self.getVotos() ]
+        lista_chapa = [x['id_chapa'] for x in self.getVotos(path) ]
         for v in lista_chapa:
             if v == chapa:
                 lista_chapas.append(v)
         return len(lista_chapas)
+
+    def getApuracaoVotos(self, path):
+        lista_votos = []
+        
+        votos = api.content.find(portal_type='voto',
+                                 path={'query': '/sistema-votacao/'+path, 'depth': 1})
+        for item in votos:
+            item = item.getObject()
+            dado = {'id': item.id,
+                    'titulo_voto': item.Title,
+                    'data': item.data_voto,
+                    'id_chapa': item.id_chapa,
+                    'codigo_eleitor': item.codigo_eleitor,
+                    'voto_nulo': item.voto_nulo,
+                    'url': item.absolute_url()
+                    }
+            lista_votos.append(dado)
+        return len(lista_votos)
+    
+    def getApuracaoSociosVotaram(self):
+        lista_socios_que_votaram = []
+        
+        socios = api.content.find(portal_type='socio')
+        for socio in socios:
+            if socio.getObject().votou == True:
+                lista_socios_que_votaram.append(socio.id)
+        
+        return len(lista_socios_que_votaram)
+
 
 class SocioCreate(BrowserView):
     """ view socio
@@ -287,6 +316,3 @@ class SocioCreate(BrowserView):
                                     container=portal)
             api.content.transition(obj=obj, transition='publish')
             
-
-
-

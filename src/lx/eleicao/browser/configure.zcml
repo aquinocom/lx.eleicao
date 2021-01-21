@@ -73,4 +73,11 @@
         class=".views.SocioCreate"
         permission="zope2.View"
         />
+    <browser:page
+        name="apuracao-votos"
+        for="*"
+        class=".views.VotacaoView"
+        permission="zope2.View"
+        template="templates/apuracao-votos.pt"
+        />
 </configure>
