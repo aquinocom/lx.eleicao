@@ -35,6 +35,7 @@
       &lt;field name="votou" type="zope.schema.Bool"&gt;
         &lt;description/&gt;
         &lt;required&gt;False&lt;/required&gt;
+        &lt;default&gt;False&lt;/default&gt;
         &lt;title&gt;Votou&lt;/title&gt;
         &lt;form:widget type="z3c.form.browser.radio.RadioFieldWidget"/&gt;
       &lt;/field&gt;
