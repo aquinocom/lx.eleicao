@@ -47,10 +47,33 @@
         &lt;required&gt;False&lt;/required&gt;
         &lt;title&gt;Foto Vice-Presidente&lt;/title&gt;
       &lt;/field&gt;
+      &lt;field name="membro" type="zope.schema.TextLine"&gt;
+        &lt;description/&gt;
+        &lt;required&gt;False&lt;/required&gt;
+        &lt;title&gt;Membro&lt;/title&gt;
+      &lt;/field&gt;
+      &lt;field name="foto_membro" type="plone.namedfile.field.NamedBlobImage"&gt;
+        &lt;description/&gt;
+        &lt;required&gt;False&lt;/required&gt;
+        &lt;title&gt;Foto Membro&lt;/title&gt;
+      &lt;/field&gt;
+      &lt;field name="primeiro_suplente" type="zope.schema.TextLine"&gt;
+        &lt;description/&gt;
+        &lt;required&gt;False&lt;/required&gt;
+        &lt;title&gt;1&amp;#186; Suplente&lt;/title&gt;
+      &lt;/field&gt;
+      &lt;field name="segundo_suplente" type="zope.schema.TextLine"&gt;
+        &lt;description/&gt;
+        &lt;required&gt;False&lt;/required&gt;
+        &lt;title&gt;2&amp;#186; Suplente&lt;/title&gt;
+      &lt;/field&gt;
+      &lt;field name="terceiro_suplente" type="zope.schema.TextLine"&gt;
+        &lt;description/&gt;
+        &lt;required&gt;False&lt;/required&gt;
+        &lt;title&gt;3&amp;#186; Suplente&lt;/title&gt;
+      &lt;/field&gt;
     &lt;/schema&gt;
-  &lt;/model&gt;
-
- </property>
+  &lt;/model&gt;</property>
  <property name="model_file"></property>
  <property name="schema_policy">dexterity</property>
  <alias from="(Default)" to="(dynamic view)"/>
