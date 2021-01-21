@@ -53,10 +53,12 @@ class VotacaoView(BrowserView):
 
         if codigo != '' and confirma_voto==False:
                 obj_socio.votou = True
-                self.request.response.redirect(self.tela_votacao)   
+                self.request.response.redirect(self.tela_votacao)  
+        elif codigo != '' and confirma_voto==True:
+            getToolByName(self.context, 'plone_utils').addPortalMessage("O sócio já votou.", type='error')
         else:
             getToolByName(self.context, 'plone_utils').addPortalMessage("Informar o código correto. ", type='error')
-            getToolByName(self.context, 'plone_utils').addPortalMessage("Ou o sócio já votou.", type='error')
+            
         
 
     def validarVoto(self, voto, codigo):
