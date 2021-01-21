@@ -48,7 +48,9 @@
         &lt;title&gt;Foto Vice-Presidente&lt;/title&gt;
       &lt;/field&gt;
     &lt;/schema&gt;
-  &lt;/model&gt;</property>
+  &lt;/model&gt;
+
+ </property>
  <property name="model_file"></property>
  <property name="schema_policy">dexterity</property>
  <alias from="(Default)" to="(dynamic view)"/>

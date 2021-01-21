@@ -32,7 +32,7 @@ class VotacaoView(BrowserView):
 
         if "form_votar" in self.request.form:
             self.validarVoto(self.request.form, 'errado')
-        
+
         if "form_votar_fiscal" in self.request.form:
             self.validarVotoFiscal(self.request.form, 'errado')
         return self.index()
@@ -40,7 +40,7 @@ class VotacaoView(BrowserView):
     def validarCodigo(self, codigo):
         """Validação do codigo socio.
         """
-        
+
         # lista_codigos_socio = api.content.find(portal_type='socio')
         # lista_codigos_socio_ = [x.getObject().codigo_do_socio for x in lista_codigos_socio]
         # socio_existe = False
@@ -49,17 +49,17 @@ class VotacaoView(BrowserView):
             confirma_voto = obj_socio.votou
         except:
             codigo = ""
-        
+
 
         if codigo != '' and confirma_voto==False:
                 obj_socio.votou = True
-                self.request.response.redirect(self.tela_votacao)  
+                self.request.response.redirect(self.tela_votacao)
         elif codigo != '' and confirma_voto==True:
             getToolByName(self.context, 'plone_utils').addPortalMessage("O sócio já votou.", type='error')
         else:
             getToolByName(self.context, 'plone_utils').addPortalMessage("Informar o código correto. ", type='error')
-            
-        
+
+
 
     def validarVoto(self, voto, codigo):
         """Validação do codigo socio.
@@ -87,8 +87,13 @@ class VotacaoView(BrowserView):
                     'nome_chapa': item.Title,
                     'presidente': item.presidente,
                     'vice_presidente': item.vice_presidente,
+                    'membro': item.membro,
+                    'primeiro_suplente': item.primeiro_suplente,
+                    'segundo_suplente': item.segundo_suplente,
+                    'terceiro_suplente': item.terceiro_suplente,
                     'foto_presidente': item.foto_presidente,
                     'foto_vice_presidente': item.foto_vice_presidente,
+                    'foto_membro': item.foto_membro,
                     'url': item.absolute_url()
                     }
             lista_candidatos.append(dado)
@@ -116,7 +121,7 @@ class VotacaoView(BrowserView):
                             )
 
         self.request.response.redirect(self.tela_pos_votacao_deliberativo)
-        
+
     def setVotoFiscal(self, voto_eleitor):
         # import pdb; pdb.set_trace()
         portal = api.portal.get()['eleicao-conselho-fiscal']['urna']
@@ -184,7 +189,7 @@ class VotacaoView(BrowserView):
 
     def getApuracaoVotos(self, path):
         lista_votos = []
-        
+
         votos = api.content.find(portal_type='voto',
                                  path={'query': '/sistema-votacao/'+path, 'depth': 1})
         for item in votos:
@@ -199,15 +204,15 @@ class VotacaoView(BrowserView):
                     }
             lista_votos.append(dado)
         return len(lista_votos)
-    
+
     def getApuracaoSociosVotaram(self):
         lista_socios_que_votaram = []
-        
+
         socios = api.content.find(portal_type='socio')
         for socio in socios:
             if socio.getObject().votou == True:
                 lista_socios_que_votaram.append(socio.id)
-        
+
         return len(lista_socios_que_votaram)
 
 
@@ -315,4 +320,3 @@ class SocioCreate(BrowserView):
                                     id = str(cod-1),
                                     container=portal)
             api.content.transition(obj=obj, transition='publish')
-            

@@ -73,7 +73,7 @@ p {
     font-size: 8pt;
   }
 }
-.template-votacao-conselho-deliberativo #visual-portal-wrapper, 
+.template-votacao-conselho-deliberativo #visual-portal-wrapper,
 .template-votacao-conselho-fiscal #visual-portal-wrapper{
   width: 100% !important;
   margin: 0 auto;
@@ -110,7 +110,7 @@ p {
 }
 
 #ajuste_tela{
-    text-align: center; 
+    text-align: center;
 }
 
 .tela_iniciar_btn{
@@ -127,7 +127,6 @@ p {
     padding: 14px;
     text-align: center;
 }
-
 
 
 .centered-and-cropped {
@@ -159,11 +158,16 @@ margin-top: 170px;
 }
 
 .resultados_votacao{
-  text-align: initial; 
+  text-align: initial;
   width: 240px;
   float: left}
 
 .grafico{
   width: 400px;
   float: left
+}
+.nome_suplente{
+    float: left;
+    font-size: 22px;
+    margin: 40px 0 0 10px;
 }

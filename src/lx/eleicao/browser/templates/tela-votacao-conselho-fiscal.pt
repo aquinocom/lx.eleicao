@@ -37,6 +37,24 @@
                             <h3 tal:content="item/vice_presidente">Vice-presidente</h3>
                         </div>
                     </div>
+                  <div  class="candidatos_chapa">
+                        <div class="img_cand">
+                            <img class="centered-and-cropped"
+                                src="" alt="" tal:attributes="src string: ${item/url}/@@images/foto_membro/mini"/>
+                        </div>
+                        <div class="nome_cand">
+                            <h4 tal:content="item/membro">Membro</h4>
+                        </div>
+                  </div>
+                  <h4 class="nome_suplente"> Suplentes: </h4>
+                    <div class="nome_suplente">
+                            <spam tal:content="item/primeiro_suplente">Primeiro Suplente-</spam> -
+
+                            <spam tal:content="item/segundo_suplente">Segundo Suplente-</spam> -
+
+                            <spam tal:content="item/terceiro_suplente">Terceiro Suplente</spam>
+                    </div>
+
                 </label>
             </div>
 
