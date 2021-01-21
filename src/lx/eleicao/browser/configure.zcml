@@ -32,7 +32,7 @@
         template="templates/tela-votacao-conselho-deliberativo.pt"
         />
     <browser:page
-        name="tela-votacao-conselho-fiscal"
+        name="votacao-conselho-fiscal"
         for="*"
         class=".views.VotacaoView"
         permission="zope2.View"
@@ -47,11 +47,25 @@
         template="templates/pos-votacao.pt"
         />
     <browser:page
+        name="pos-votacao-deliberativo"
+        for="*"
+        class=".views.VotacaoView"
+        permission="zope2.View"
+        template="templates/pos-votacao-deliberativo.pt"
+        />
+    <browser:page
         name="resultados-votacao"
         for="*"
         class=".views.VotacaoView"
         permission="zope2.View"
         template="templates/resultados-votacao.pt"
+        />
+    <browser:page
+        name="resultados-votacao-fiscal"
+        for="*"
+        class=".views.VotacaoView"
+        permission="zope2.View"
+        template="templates/resultados-votacao-fiscal.pt"
         />
     <browser:page
         name="socio-create"

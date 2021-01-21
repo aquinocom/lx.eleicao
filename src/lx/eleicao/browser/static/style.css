@@ -1,4 +1,4 @@
-.template-votacao-conselho-deliberativo section {
+.tela_votacao section {
   display: flex;
   flex-flow: row wrap;
   margin-bottom: 100px;
@@ -7,7 +7,7 @@ section > div {
   flex: 1;
   padding: 0.5rem;
 }
-.template-votacao-conselho-deliberativo input[type="radio"] {
+.tela_votacao input[type="radio"] {
   display: none;
   &:not(:disabled) ~ label {
     cursor: pointer;
@@ -19,7 +19,7 @@ section > div {
     cursor: not-allowed;
   }
 }
-.template-votacao-conselho-deliberativo label {
+.tela_votacao label {
   height: 100%;
   display: block;
   background: white;
@@ -32,7 +32,7 @@ section > div {
   box-shadow: 0px 3px 10px -2px hsla(150, 5%, 65%, 0.5);
   position: relative;
 }
-.template-votacao-conselho-deliberativo  input[type="radio"]:checked + label {
+.tela_votacao  input[type="radio"]:checked + label {
   background: hsla(150, 75%, 50%, 1);
   color: hsla(215, 0%, 100%, 1);
   box-shadow: 0px 0px 20px hsla(150, 100%, 50%, 0.75);
@@ -55,7 +55,7 @@ section > div {
     box-shadow: 0px 2px 5px -2px hsla(0, 0%, 0%, 0.25);
   }
 }
-.template-votacao-conselho-deliberativo  input[type="radio"]#control_05:checked + label {
+.tela_votacao  input[type="radio"]#control_05:checked + label {
   background: red;
   border-color: red;
 }
@@ -82,9 +82,7 @@ p {
     margin: 0 auto;
     width: 700px;
 }
-.header_eleicao #portal-logo{
 
-}
 .titulo_site {
     padding: 25px 0 0 10px;
 }
@@ -115,7 +113,7 @@ p {
 
 .tela_iniciar_input{
     font-size: 24pt;
-    width: 30%;
+    width: 35%;
     padding: 14px;
     text-align: center;
 }

@@ -14,6 +14,7 @@
           tal:define="codigo_socio_request python: context.REQUEST.get('codigo_socio', None);">
         <input inputmode="tel" type="text" name="codigo_socio" onkeypress="return event.charCode >= 48 && event.charCode <= 57"
                tal:attributes="value codigo_socio_request|nothing"
+               placeholder="DIGITE O CÓDIGO"
                class="tela_iniciar_input"/>
                <br/>
         <input type="submit" value="INICIAR" name="form.iniciar" class="tela_iniciar_btn"/>

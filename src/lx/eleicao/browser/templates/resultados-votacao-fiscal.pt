@@ -1,0 +1,58 @@
+<!DOCtype html>
+<html lang="en" metal:use-macro="context/main_template/macros/master">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+</head>
+<body metal:fill-slot="main">
+<script src="++resource++lx.eleicao/Chart.min.js"></script>
+<div id="ajuste_tela">
+    <h1>Resultados da Eleição</h1>
+    <div class="resultados_votacao">
+        <ul>
+            <li>Votos chapa única: <b tal:content="python: view.votosChapas('chapa-unica')"></b></li>
+            <li>Votos nulos: <b tal:content="view/votosNulos"></b></li>
+            <li>Total de votos: <b tal:content="view/votosTotal"></b></li>
+        </ul>
+    </div>
+<div style="width: 400px">
+    <canvas id="myChart" width="200" height="200"></canvas>
+</div>
+
+<tal:lt replace="structure string:&lt;" />script>
+
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ['NULO', 'CHAPA 01', 'CHAPA 02'],
+        datasets: [{
+            label: '# of Votes',
+            data: [<tal:script replace="structure view/votosNulos" />,
+                   <tal:script replace="structure python: view.votosChapas('chapa-01')" />, 
+                   <tal:script replace="structure python: view.votosChapas('chapa-02')" />],
+            backgroundColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+          
+            ],
+            
+            borderWidth: 1
+        }]
+    },
+    options: {
+       
+    }
+});
+
+<tal:lt replace="structure string:&lt;" />/script>
+
+
+
+
+
+</div>
+</body>
+</html>

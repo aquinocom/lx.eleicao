@@ -18,6 +18,7 @@ class VotacaoView(BrowserView):
         self.url_sucess = self.context.absolute_url()
         self.utils = getToolByName(self.context, 'plone_utils')
         self.tela_votacao = self.context.absolute_url()+"/votacao-conselho-deliberativo"
+        self.tela_pos_votacao_deliberativo = self.context.absolute_url()+"/pos-votacao-deliberativo"
         self.tela_posvotacao = self.context.absolute_url()+"/pos-votacao"
 
         if 'codigo_socio' in request.form:
@@ -31,6 +32,9 @@ class VotacaoView(BrowserView):
 
         if "form_votar" in self.request.form:
             self.validarVoto(self.request.form, 'errado')
+        
+        if "form_votar_fiscal" in self.request.form:
+            self.validarVotoFiscal(self.request.form, 'errado')
         return self.index()
 
     def validarCodigo(self, codigo):
@@ -46,6 +50,7 @@ class VotacaoView(BrowserView):
             self.request.response.redirect(self.tela_votacao)
         else:
             getToolByName(self.context, 'plone_utils').addPortalMessage("Informar o código correto.", type='error')
+        
 
     def validarVoto(self, voto, codigo):
         """Validação do codigo socio.
@@ -55,6 +60,13 @@ class VotacaoView(BrowserView):
         else:
             self.setVoto(self.request.form['voto'])
 
+    def validarVotoFiscal(self, voto, codigo):
+        """Validação do codigo socio.
+        """
+        if 'voto' not in voto.keys():
+            getToolByName(self.context, 'plone_utils').addPortalMessage("Selecionar uma chapa, ou votar nulo.", type='error')
+        else:
+            self.setVotoFiscal(self.request.form['voto'])
 
     def getCandidatos(self):
         lista_candidatos = []
@@ -76,6 +88,29 @@ class VotacaoView(BrowserView):
     def setVoto(self, voto_eleitor):
         # import pdb; pdb.set_trace()
         portal = api.portal.get()['eleicao-conselho-deliberativo']['urna']
+        dados_form = self.request.form
+        if dados_form['voto'] == 'nulo':
+            anulado = True
+        else:
+            anulado = False
+
+        id_voto = "voto-{0}".format(datetime.now().strftime("%d%m%y%f"))
+        titulo_voto = "{0}-{1}-{2}".format(id_voto, dados_form['voto'], datetime.now().strftime("%d/%m/%y"))
+        _createObjectByType('voto',
+                            portal,
+                            id=id_voto,
+                            title=titulo_voto,
+                            id_chapa=dados_form['voto'],
+                            codigo_eleitor='avulso',
+                            voto_nulo=anulado,
+                            data_voto=datetime.now()
+                            )
+
+        self.request.response.redirect(self.tela_pos_votacao_deliberativo)
+        
+    def setVotoFiscal(self, voto_eleitor):
+        # import pdb; pdb.set_trace()
+        portal = api.portal.get()['eleicao-conselho-fiscal']['urna']
         dados_form = self.request.form
         if dados_form['voto'] == 'nulo':
             anulado = True
@@ -241,6 +276,7 @@ class SocioCreate(BrowserView):
                                     codigo_do_socio=str(cod-1),
                                     id = str(cod-1),
                                     container=portal)
+            api.content.transition(obj=obj, transition='publish')
             
 
 

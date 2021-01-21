@@ -7,56 +7,57 @@
 </head>
 <body metal:fill-slot="main">
 
+<div class="tela_votacao">
 
-<form action="" onsubmit="return checkForm(this);">
+    <form action="" onsubmit="return checkForm(this);">
 
-    <section tal:define="chapas view/getCandidatos">
+        <section tal:define="chapas view/getCandidatos">
 
-        <div tal:repeat="item chapas">
-            <input type="radio" id="control_01" name="voto" value="1"
-                   tal:attributes="value item/id;
-                                   id string: control_${repeat/item/number}" />
-            <label for="control_01" tal:attributes="for string: control_${repeat/item/number}">
-                <h2 tal:content="item/nome_chapa" class="nome_chapa">Pfft</h2>
-                <div  class="candidatos_chapa">
-                    <div class="img_cand">
-                        <img class="centered-and-cropped"
-                             src="" alt="" tal:attributes="src string: ${item/url}/@@images/foto_presidente/mini" />
+            <div tal:repeat="item chapas">
+                <input type="radio" id="control_01" name="voto" value="1"
+                    tal:attributes="value item/id;
+                                    id string: control_${repeat/item/number}" />
+                <label for="control_01" tal:attributes="for string: control_${repeat/item/number}">
+                    <h2 tal:content="item/nome_chapa" class="nome_chapa">Pfft</h2>
+                    <div  class="candidatos_chapa">
+                        <div class="img_cand">
+                            <img class="centered-and-cropped"
+                                src="" alt="" tal:attributes="src string: ${item/url}/@@images/foto_presidente/mini" />
+                        </div>
+                        <div class="nome_cand">
+                            <h2 tal:content="item/presidente" >Presidende </h2>
+                        </div>
                     </div>
-                    <div class="nome_cand">
-                        <h2 tal:content="item/presidente" >Presidende </h2>
+                    <div  class="candidatos_chapa">
+                        <div class="img_cand">
+                            <img class="centered-and-cropped"
+                                src="" alt="" tal:attributes="src string: ${item/url}/@@images/foto_vice_presidente/mini"/>
+                        </div>
+                        <div class="nome_cand">
+                            <h3 tal:content="item/vice_presidente">Vice-presidente</h3>
+                        </div>
                     </div>
-                </div>
-                <div  class="candidatos_chapa">
-                    <div class="img_cand">
-                        <img class="centered-and-cropped"
-                             src="" alt="" tal:attributes="src string: ${item/url}/@@images/foto_vice_presidente/mini"/>
-                    </div>
-                    <div class="nome_cand">
-                        <h3 tal:content="item/vice_presidente">Vice-presidente</h3>
-                    </div>
-                </div>
-            </label>
-        </div>
+                </label>
+            </div>
 
+            <div>
+                <input type="radio" id="control_nulo" name="voto" value="nulo">
+                <label for="control_nulo">
+                    <div class="chapa_nulo">
+                        <h2 class="nome_chapa">NULO</h2>
+                    </div>
+                </label>
+            </div>
+
+        </section>
+        <div style="clear:both"> </div>
         <div>
-            <input type="radio" id="control_nulo" name="voto" value="nulo">
-            <label for="control_nulo">
-                <div class="chapa_nulo">
-                    <h2 class="nome_chapa">NULO</h2>
-                </div>
-            </label>
+            <input type="submit" value="VOTAR" class="botao_votar" name="form_votar"/>
         </div>
 
-    </section>
-    <div style="clear:both"> </div>
-    <div>
-        <input type="submit" value="VOTAR" class="botao_votar" name="form_votar"/>
-    </div>
 
+    </form>
 
-</form>
-
-
+</div>
 </body>
 </html>

@@ -14,10 +14,11 @@
   <element value="voto"/>
  </property>
  <property name="allow_discussion">False</property>
- <property name="default_view">resultados-votacao</property>
+ <property name="default_view">view</property>
  <property name="view_methods">
   <element value="view"/>
   <element value="resultados-votacao"/>
+  <element value="resultados-votacao-fiscal"/>
  </property>
  <property name="default_view_fallback">False</property>
  <property name="add_permission">cmf.AddPortalContent</property>
