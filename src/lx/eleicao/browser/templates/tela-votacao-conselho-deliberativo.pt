@@ -17,7 +17,7 @@
             <div tal:repeat="item chapas">
                 <input type="radio" id="control_01" name="voto" value="1"
                     tal:attributes="value item/id;
-                                    id string: control_${repeat/item/number}" />
+                                    id string: control_${repeat/item/number}"/>
                 <label for="control_01" tal:attributes="for string: control_${repeat/item/number}">
                     <h2 tal:content="item/nome_chapa" class="nome_chapa">Pfft</h2>
                     <div  class="candidatos_chapa">
