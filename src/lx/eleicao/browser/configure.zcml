@@ -80,4 +80,5 @@
         permission="zope2.View"
         template="templates/apuracao-votos.pt"
         />
+    
 </configure>
