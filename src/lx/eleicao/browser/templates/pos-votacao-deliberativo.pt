@@ -8,14 +8,12 @@
 <body metal:fill-slot="main">
 <script>
     setTimeout(function() {
-        window.location.href = "../eleicao-conselho-fiscal/votacao-conselho-fiscal";
-    }, 3000);
+        window.location.href = "pos-votacao";
+    }, 1000);
 </script>
 <div id="ajuste_tela">
    <h1> VOTO NO CONSELHO DELIBERATIVO COMPUTADO COM SUCESSO.
     <br/>
-    <br/>
-    Aguarde para votar no CONSELHO FISCAL.</h1>
 </div>
 </body>
 </html>

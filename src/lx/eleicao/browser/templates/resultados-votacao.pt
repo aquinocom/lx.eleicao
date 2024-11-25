@@ -16,8 +16,8 @@
     <div class="resultado_content" tal:define="caminho string:/sistema-votacao/eleicao-conselho-deliberativo/urna">
         <div class="resultados_votacao" >
             <ul>
-                <li>Votos chapa 01: <b tal:content="python: view.votosChapas('chapa-01', caminho)"></b></li>
-                <li>Votos chapa 02: <b tal:content="python: view.votosChapas('chapa-02', caminho)"></b></li>
+                <li>Votos Verde: <b tal:content="python: view.votosChapas('verde', caminho)"></b></li>
+                <li>Votos branca: <b tal:content="python: view.votosChapas('branca', caminho)"></b></li>
                 <li>Votos nulos: <b tal:content="python: view.votosNulos(caminho)"></b></li>
                 <li>Total de votos: <b tal:content="python: view.votosTotal(caminho)"></b></li>
             </ul>
@@ -25,7 +25,7 @@
         <div class="grafico">
             <canvas id="myChart" width="200" height="200"></canvas>
         </div>
-    
+
 
 <tal:lt replace="structure string:&lt;" />script>
 
@@ -33,24 +33,24 @@ var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'pie',
     data: {
-        labels: ['NULO', 'CHAPA 01', 'CHAPA 02'],
+        labels: ['NULO', 'VERDE', 'BRANCA'],
         datasets: [{
             label: '# of Votes',
             data: [<tal:script replace="structure python: view.votosNulos(caminho)" />,
-                   <tal:script replace="structure python: view.votosChapas('chapa-01', caminho)" />, 
-                   <tal:script replace="structure python: view.votosChapas('chapa-02', caminho)" />],
+                   <tal:script replace="structure python: view.votosChapas('verde', caminho)" />,
+                   <tal:script replace="structure python: view.votosChapas('branca', caminho)" />],
             backgroundColor: [
                 'rgba(255, 99, 132, 1)',
                 'rgba(54, 162, 235, 1)',
                 'rgba(255, 206, 86, 1)',
-          
+
             ],
-            
+
             borderWidth: 1
         }]
     },
     options: {
-       
+
     }
 });
 
